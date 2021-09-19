@@ -18,11 +18,19 @@ const ImageList = () => {
     dispatch(GetImageList());
   };
 
- console.log(imageList.data)
+ console.log(imageList.data[0])
 
   const ShowData = () => {
     if (!_.isEmpty(imageList.data)) {
-      return imageList.data.title
+      return (
+        // imageList.data[0].date
+        imageList.data.map((el) => (
+          <p>{el.date}</p>
+
+        ))
+        
+        )
+
 
      
 
