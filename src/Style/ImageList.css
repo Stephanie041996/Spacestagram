@@ -1,3 +1,7 @@
+.list-wrapper {
+  justify-content: center;
+}
+
 @keyframes ldio-ql2ovzsg3s9 {
   0% { opacity: 1 }
   100% { opacity: 0 }

@@ -5,14 +5,24 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 class LikeButton extends React.Component {
     state = {
-        likes: 0
+        likes: 0,
+        liked: false
       };
      
 
       addLike = () => {
         let newCount = this.state.likes + 1;
           this.setState({
-          likes: newCount
+          likes: newCount,
+          liked: !this.state.liked
+        });
+      };
+
+      removeLike = () => {
+        let newCount = this.state.likes - 1;
+          this.setState({
+          likes: newCount,
+          liked: this.state.liked
         });
       };
 
@@ -33,11 +43,10 @@ class LikeButton extends React.Component {
           );
         }
      
-        if (likes ===1 || likes > 1) {
+        if (likes === 1 ) {
           return (
             <div className="card-like-bar">
-            <button className="card-like-icon" onClick={this.addLike} id={this.props.itemId}>{element }</button>
-
+            <button className="card-like-icon" onClick={this.removeLike} id={this.props.itemId}>{element }</button>
             <div className="like-text">
            <b>Likes: {this.state.likes}</b>
 
@@ -45,6 +54,7 @@ class LikeButton extends React.Component {
         </div>
           );
         }
+    
       }
     }
     export default LikeButton
