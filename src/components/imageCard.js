@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Card.css";
+import "../Style/Card.css";
 import heartOutline from "../assets/heart-outline.png"; 
 import heartFill from "../assets/heart-fill.png";
 

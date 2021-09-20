@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Nav.css";
+import "../Style/Nav.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUndo } from '@fortawesome/free-solid-svg-icons';
 

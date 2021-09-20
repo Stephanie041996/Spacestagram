@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetImageList } from '../actions/imageActions';
-import './ImageList.css';
+import '../Style/ImageList.css';
 import ImageCard from './imageCard'
 import Nav from './nav'
 
