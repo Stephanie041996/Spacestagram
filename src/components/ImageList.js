@@ -10,7 +10,6 @@ const ImageList = () => {
   const dispatch = useDispatch();
   const imageList = useSelector((state) => state.ImageList);
 
-
   React.useEffect(() => {
     FetchData();
   }, []);
@@ -21,21 +20,18 @@ const ImageList = () => {
 
 
   const ShowData = () => {
-    const like= 193;
-    const isLiked = true;
     if (!_.isEmpty(imageList.data)) {
       return (
         <div className="list-wrapper">
         {imageList.data.map((el, t) => (
-          <div className="column" key={t}>
+          <div className="column" key={t.date}>
          
             <ImageCard 
             title={el.title}
             date={el.date}
             url={el.url}
             explanation={el.explanation}
-            liked={isLiked}
-            likeCount={like}
+            id={t.date}
           />
 
        </div>

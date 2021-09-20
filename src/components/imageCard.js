@@ -1,7 +1,6 @@
 import React from 'react'
 import "../Style/Card.css";
-import heartOutline from "../assets/heart-outline.png"; 
-import heartFill from "../assets/heart-fill.png";
+import LikeButton from './Button';
 
 const ImageCard = (props) =>{
 
@@ -17,15 +16,10 @@ return (
       <img className="card-image" src={props.url} alt="LostImage" />
       <div className="card-text">{props.explanation}</div>
       <div className="card-like-bar">
-        {props.liked ? (
-          <img className="card-like-icon" src={heartFill} alt="likeicon" />
-        ) : (
-          <img className="card-like-icon" src={heartOutline} alt="likeicon" />
-        )}
-        <div className="like-text">
-          <b>{props.likeCount}</b> likes
-        </div>
+      <LikeButton itemId={props.id} />
       </div>
+    
+   
     </div>
   
 </>)
