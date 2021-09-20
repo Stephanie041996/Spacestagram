@@ -24,7 +24,7 @@ const DefualtState = {
         return {
           ...state,
           loading: false,
-          errorMessage: ' ERROR!! unable to get Image info from Api Please reload',
+          errorMessage: ' ERROR!! unable to get image info from Api Please reload',
         };
       default:
         return state;

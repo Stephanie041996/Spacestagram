@@ -8,7 +8,6 @@ import Nav from './nav'
 
 const ImageList = () => {
   const dispatch = useDispatch();
-//   const test = 
   const imageList = useSelector((state) => state.ImageList);
 
 
@@ -20,19 +19,17 @@ const ImageList = () => {
     dispatch(GetImageList());
   };
 
- console.log(imageList.data[0])
 
   const ShowData = () => {
     const like= 193;
     const isLiked = true;
     if (!_.isEmpty(imageList.data)) {
       return (
-        // imageList.data[0].date
         <div className="list-wrapper">
         {imageList.data.map((el, t) => (
-          <div className="column">
+          <div className="column" key={t}>
          
-            <ImageCard
+            <ImageCard 
             title={el.title}
             date={el.date}
             url={el.url}
@@ -41,7 +38,7 @@ const ImageList = () => {
             likeCount={like}
           />
 
-</div>
+       </div>
         ))}
         </div>
          )
