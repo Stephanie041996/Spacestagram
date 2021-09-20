@@ -3,6 +3,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetImageList } from '../actions/imageActions';
 import './ImageList.css';
+import ImageCard from './imageCard'
+import Nav from './nav'
 
 const ImageList = () => {
   const dispatch = useDispatch();
@@ -21,20 +23,27 @@ const ImageList = () => {
  console.log(imageList.data[0])
 
   const ShowData = () => {
+    const like= 193;
+    const isLiked = true;
     if (!_.isEmpty(imageList.data)) {
       return (
         // imageList.data[0].date
-        imageList.data.map((el, t) => (
-          <div>
-                <img
-          alt='image3'
-          src={el.url}
-        />
-          <h3 key={t}>{el.title}</h3>
-          <p key={t}>{el.date}</p>
-          <p key={t}>{el.explanation}</p>
-          </div>
-        ))
+        <div className="list-wrapper">
+        {imageList.data.map((el, t) => (
+          <div className="column">
+         
+            <ImageCard
+            title={el.title}
+            date={el.date}
+            url={el.url}
+            explanation={el.explanation}
+            liked={isLiked}
+            likeCount={like}
+          />
+
+</div>
+        ))}
+        </div>
          )
     }
     if (imageList.loading) {
@@ -55,6 +64,7 @@ const ImageList = () => {
 
   return (
     <div>
+      <Nav />
       {ShowData()}
     </div>
   );

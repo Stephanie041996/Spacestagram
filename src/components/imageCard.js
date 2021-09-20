@@ -1,47 +1,33 @@
 import React from 'react'
+import "./Card.css";
+import heartOutline from "../assets/heart-outline.png"; 
+import heartFill from "../assets/heart-fill.png";
 
-const ImageCard = () =>{
-
+const ImageCard = (props) =>{
 
 return (
     <>
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        </CardActions>
-        </Card>
+     <div className="card">
+      <div className="card-header">
+        <div className="card-title-group">
+          <h5 className="card-title">{props.title}</h5>
+          <div className="card-date">{props.date}</div>
+        </div>
+      </div>
+      <img className="card-image" src={props.url} alt="LostImage" />
+      <div className="card-text">{props.explanation}</div>
+      <div className="card-like-bar">
+        {props.liked ? (
+          <img className="card-like-icon" src={heartFill} alt="likeicon" />
+        ) : (
+          <img className="card-like-icon" src={heartOutline} alt="likeicon" />
+        )}
+        <div className="like-text">
+          <b>{props.likeCount}</b> likes
+        </div>
+      </div>
+    </div>
+  
 </>)
 }
 export default ImageCard;
