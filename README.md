@@ -56,7 +56,7 @@ Go to http://localhost:3000/ in your browser to see the application running
 - GitHub: [@stephanie041996](https://github.com/Stephanie041996)
 - LinkedIn: [Stephanie Sakuhuni](www.linkedin.com/in/stephanie-michelle-sakuhuni) 
 
-- 
+-  Portfolio: [Stephanie Sakuhuni](https://stephanie-michelle.tech) 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
