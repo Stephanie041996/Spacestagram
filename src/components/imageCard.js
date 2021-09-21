@@ -6,7 +6,7 @@ const ImageCard = (props) =>{
 
 return (
     <>
-     <div className="card">
+     <div className="card" data-testid="mySpan">
       <div className="card-header">
         <div className="card-title-group">
           <h5 className="card-title">{props.title}</h5>
